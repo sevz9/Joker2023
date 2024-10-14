@@ -46,11 +46,6 @@ fun main(args: Array<String>) {
         return
     }
 
-//    val seeds = mutableMapOf(
-//        -1 to """<h1>Hello</h1><p>Welcome!</p>""".asByteArray(b.size),
-//        0 to """<form><input type="text"><input type="submit"></form>""".asByteArray(b.size),
-//        1 to """ <ul><li>Item 1</li><li>Item 2</li></ul>""".asByteArray(b.size)
-//    )
 
     val seeds = mutableMapOf(
         -1 to """<h1>Hello</h1><p>Welcome!</p>""".asByteArray(b.size),
