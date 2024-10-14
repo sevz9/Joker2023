@@ -192,7 +192,6 @@ fun Random.mutate(input: ByteArray): ByteArray {
         "insert_tag" to 0.5,
         "delete_tag" to 0.5,
         "add_invalid_char" to 0.5,
-        "duplicate_tag" to 0.5
     )
 
     val tagPattern = """<[^>]+>""".toRegex()
@@ -221,10 +220,6 @@ fun Random.mutate(input: ByteArray): ByteArray {
         val invalidChar = Random.nextInt(32, 127).toChar()
         val insertionPoint = Random.nextInt(builder.size)
         builder.add(insertionPoint, invalidChar)
-    }
-
-    if (tags.isNotEmpty() && randomDecision(probabilities["duplicate_tag"]!!)) {
-        insertAtRandom(tags.random())
     }
 
     return builder.joinToString("").toByteArray(Charsets.UTF_8)
